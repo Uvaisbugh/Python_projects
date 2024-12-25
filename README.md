@@ -1,5 +1,6 @@
 # Projects and Ideas 💡 
 * Email Sender    
 * Word Replacement Program    
-* Basic Calculator
+* Python Calculator
 * Email Slicer
+* Raddit bot
