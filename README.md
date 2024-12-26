@@ -4,3 +4,6 @@
 * Python Calculator
 * Email Slicer
 * Raddit bot
+* Binary search algorithm
+* Qr code genrator
+* Quiz
