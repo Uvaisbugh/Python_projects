@@ -1,7 +1,6 @@
 import os
 import qrcode
-from PIL import Image
-from qreader import QReader
+import cv2
 
 class QRCodeApp:
     def __init__(self):
@@ -31,13 +30,16 @@ class QRCodeApp:
         img.save(os.path.join(self.output_dir, f"code_{number}.png"))
         print(f"QR code generated successfully: {self.output_dir}/code_{number}.png")
 
-    def decode_qrcode(self, image_path):
-        """Decode the QR code from the given image."""
+
+    def decode_qrcode(image_path):
+        """Decode the QR code from the given image using OpenCV."""
         try:
-            img = Image.open(image_path)
-            result = QReader.detect_and_decode(image=img)
-            if result:
-                print("Decoded text:", result)
+            img = cv2.imread(image_path)
+            detector = cv2.QRCodeDetector()
+            data, bbox, _ = detector(img)
+
+            if data:
+                print("Decoded text:", data)
             else:
                 print("No QR code found in the image.")
         except Exception as e:
