@@ -1,4 +1,5 @@
 import re
+# Function to check password strength
 
 def check_password_strength(password):
     # Check if password is at least 8 characters long
@@ -20,7 +21,22 @@ def check_password_strength(password):
     return strength
 
 # Test the function
-password = "Password123!"
-print(check_password_strength(password)) 
+def main():
+    password = input("Enter your password: ")
+    strength = check_password_strength(password)
+    
+    # examine the strength of the password
+    if strength == 5:
+        print("Password is very strong !")
+    elif strength == 4:
+        print("Password is strong !")
+    elif strength >= 3:
+        print("Password is medium !")
+    elif strength >= 2:
+        print("Password is weak !")
+    else:
+        print("Password is very weak !")
+        
+
 
     
