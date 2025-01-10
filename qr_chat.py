@@ -1,5 +1,6 @@
 import qrcode
 from PIL import Image
+from qreader import QReader
 
 def generate_qrcode(text):
     qr = qrcode.QRCode(
@@ -8,7 +9,7 @@ def generate_qrcode(text):
         box_size=10,
         border=4,
     )
-
+    
     qr.add_data(text)
     qr.make(fit=True)
     img = qr.make_image(fill_color="white", back_color="black")
@@ -19,7 +20,7 @@ def generate_qrcode(text):
     
 def decode_qrcode(image):
     img = Image.open(image)
-    result = qrcode.decode(img)
+    result = QReader.detect_and_decode(image=img)
     print("Decoded text: ", result)
     
     
