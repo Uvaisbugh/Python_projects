@@ -1,14 +1,14 @@
 def print_menu():
+    # This function prints the menu
   print('\nTodo List Menu:')
   print('1. View Tasks')
   print('2. Add a Task')
   print('3. Remove a Task')
   print('4. Exit')
   
-  
-
 
 def get_choice():
+    # This function gets the user's choice and returns it
   while True:
     choice = input('Enter your choice: ')
     valid_choices = ('1', '2', '3', '4')
@@ -20,6 +20,7 @@ def get_choice():
 
 
 def display_tasks(tasks):
+    # This function displays the tasks in the list
   if not tasks:
     print('No tasks in the list.')
     return
@@ -29,6 +30,7 @@ def display_tasks(tasks):
 
 
 def add_task(tasks):
+  # This function adds a new task to the list
   while True:
     task = input('Enter a new task: ').strip()
     if len(task) != 0:
@@ -39,6 +41,7 @@ def add_task(tasks):
 
 
 def remove_task(tasks):
+    # This function removes a task from the list
   display_tasks(tasks)
 
   while True:
@@ -53,6 +56,7 @@ def remove_task(tasks):
       print('Invalid task number')
 
 def main():
+  # This is the main function
   tasks = []
 
   while True:
