@@ -24,3 +24,8 @@ for i in range(1, rows + 1):
     for j in range(i):
         print((j + i) % 2, end=" ")
     print()
+# 1 
+# 0 1 
+# 1 0 1
+# 0 1 0 1
+# 1 0 1 0 1
