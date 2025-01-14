@@ -8,7 +8,7 @@ def write_file(filename, text):
     with open (filename, 'w') as f:
         f.write(text)
         
-def get_user_input(prompt):
+def get_user_input(content):
     print('\nEnter your text (type SAVE on a new line to save and exist):')
   
     lines = []
@@ -22,3 +22,17 @@ def get_user_input(prompt):
 
 def main():
     filename = input('Enter the filename: ')
+    try:
+        if os.path.exists(filename):
+            print(read_file(filename))
+        else:
+            write_file(filename, '')
+ 
+        content = get_user_input()
+        write_file(filename, content)
+        print(f'{filename} saved.')
+    except OSError:
+        print(f'{filename} could not be opened.')
+
+if __name__ == '__main__':
+  main()
