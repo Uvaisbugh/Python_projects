@@ -1,6 +1,6 @@
 import math
-#create a calculater
 
+# Define functions for operations
 def add(x, y):
     return x + y
 
@@ -81,39 +81,40 @@ def lcm(x, y):
     return math.lcm(x, y)
 
 while True:
-    print("Select operation.")
-    print("1.Add")
-    print("2.Subtract")
-    print("3.Multiply")
-    print("4.Divide")
-    print("5.Square Root")
-    print("6.Power")
-    print("7.Modulus")
-    print("8.Factorial")
-    print("9.Sin")
-    print("10.Cos")
-    print("11.Tan")
-    print("12.Log")
-    print("13.ln")
-    print("14.Exp")
-    print("15.Pi")
-    print("16.e")
-    print("17.Abs")
-    print("18.Ceil")
-    print("19.Floor")
-    print("20.Trunc")
-    print("21.Round")
-    print("22.Max")
-    print("23.Min")
-    print("24.GCD")
-    print("25.LCM")
-    print("26.Exit")
+    print("\nSelect operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Square Root")
+    print("6. Power")
+    print("7. Modulus")
+    print("8. Factorial")
+    print("9. Sin")
+    print("10. Cos")
+    print("11. Tan")
+    print("12. Log")
+    print("13. Ln")
+    print("14. Exp")
+    print("15. Pi")
+    print("16. e")
+    print("17. Abs")
+    print("18. Ceil")
+    print("19. Floor")
+    print("20. Trunc")
+    print("21. Round")
+    print("22. Max")
+    print("23. Min")
+    print("24. GCD")
+    print("25. LCM")
+    print("26. Exit")
 
     choice = input("Enter choice(1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/16/17/18/19/20/21/22/23/24/25/26): ")
 
-    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26'):
+    if choice in ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'):
         num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        if choice not in ('5', '9', '10', '11', '12', '13', '14', '15', '16'):  # Skip num2 for functions that need only num1
+            num2 = float(input("Enter second number: "))
 
         if choice == '1':
             print(num1, "+", num2, "=", add(num1, num2))
@@ -190,10 +191,8 @@ while True:
         elif choice == '25':
             print("LCM of", num1, "and", num2, "=", lcm(num1, num2))    
 
-        elif choice == '26':
-            break
+    elif choice == '26':
+        break  # Exit the program
 
     else:
-        print("Invalid input")
-        break
-    
+        print("Invalid input! Please select a valid operation.")
