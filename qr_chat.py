@@ -31,7 +31,7 @@ class QRCodeApp:
         print(f"QR code generated successfully: {self.output_dir}/code_{number}.png")
 
 
-    def decode_qrcode(image_path):
+    def decode_qrcode(self, image_path):
         """Decode the QR code from the given image using OpenCV."""
         try:
             img = cv2.imread(image_path)
