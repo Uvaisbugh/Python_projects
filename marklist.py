@@ -45,12 +45,12 @@ faris.special(10)
 faris.display()  # Display updated details and grade
 
 
-# Creating an instance for a student named "Shamsul"
+
 shamsul = StudentDetails("Shamsul", 2, 70)
-shamsul.update_marks(90)  # Update marks
+shamsul.update_marks(90)  
 shamsul.special(10)
 shamsul.display()
 
 
 muneer= StudentDetails("Muneer", 3, 50)
-muneer.update_marks(90)  # Update marks
+muneer.update_marks(90)  
