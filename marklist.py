@@ -32,13 +32,8 @@ class StudentDetails:
         """
         self.total_marks = new_marks
 
-    def marklist(self):
-        """
-        Display the student's name, roll number, and total marks.
-        """
-        print(f"Name: {self.name}")
-        print(f"Roll Number: {self.roll_no}")
-        print(f"Total Marks: {self.total_marks}")
+    def special(self,marks):
+        self.total_marks += marks
 
 
 # Example usage of the class
@@ -46,12 +41,16 @@ class StudentDetails:
 faris = StudentDetails("Faris", 1, 80)
 faris.display()  # Display details and grade
 faris.update_marks(90)  # Update marks
+faris.special(10)
 faris.display()  # Display updated details and grade
-faris.marklist()  # Display the marklist
+
 
 # Creating an instance for a student named "Shamsul"
 shamsul = StudentDetails("Shamsul", 2, 70)
-shamsul.display()  # Display details and grade
 shamsul.update_marks(90)  # Update marks
-shamsul.display()  # Display updated details and grade
-shamsul.marklist()  # Display the marklist
+shamsul.special(10)
+shamsul.display()
+
+
+muneer= StudentDetails("Muneer", 3, 50)
+muneer.update_marks(90)  # Update marks
